@@ -2,8 +2,8 @@
 С помощью этих файлов вы сможете быстро настроить сборку вашего проекта на Gulp.
 
 ## Структура каталогов для размещения файлов стилей и скриптов:  
->./src/styles/\*\*/\*.less 
->./src/scripts/\*\*/\*.js
+>./src/styles/\*\*/\*.less   
+>./src/scripts/\*\*/\*.js  
 
 ## Инструкция:  
 1. Скачать все файлы в любую директорию   
@@ -12,7 +12,7 @@
 4. Писать свой код и наслаждаться автоматической сборкой проекта. 
 
 ## Ссылки
-[Сборка проекта на Gulp 4](https://github.com/morphIsmail/gulp_build_3)
+[Сборка проекта на Gulp 4](https://github.com/morphIsmail/gulp_build_3)  
 [Документация Gulp на русском языке](https://webdesign-master.ru/blog/docs/gulp-documentation.html)
 
 ## Установленные NPM пакеты 
