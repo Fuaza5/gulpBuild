@@ -53,12 +53,12 @@ gulp.task('styles', () => { //сокращенная запись анонимн
         //Объединеие файлов в 1
         .pipe(concat('styles.css'))
         //Добавляем префиксы
-        // .pipe(autoprefix())
+        // .pipe(autoprefixer({}))
         //Минификация CSS
         .pipe(cleanCSS({
             level: 2
         }))
-        .pipe(sourcemaps.write('./')) //записываем файлы
+        .pipe(sourcemaps.write('.')) //записываем файлы
         .pipe(rename({
             suffix: '.min'
         }))
@@ -74,6 +74,7 @@ gulp.task('scripts', () => {
     return gulp.src(scriptFiles)
 
     //Действие функции
+        .pipe(sourcemaps.init())
         .pipe(concat('script.js'))
         //Минификация JS
         .pipe(uglify({
@@ -82,7 +83,10 @@ gulp.task('scripts', () => {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(sourcemaps.write('.'))
 
     //Выходная папка для стилей
         .pipe(gulp.dest('./build/js'))
@@ -124,5 +128,5 @@ gulp.task('watch', () => {
 })
 
 //Таск по умолчанию, запускающий del, styles, scripts и watch
-gulp.task('default', gulp.series('del', gulp.parallel('styles', 'scripts', 'img-min'), 'watch'))
+gulp.task('default', gulp.series('del', gulp.parallel('styles', 'scripts'), 'watch'))
 //exports.название_задачи = функция - аналогичное создкание задачи
