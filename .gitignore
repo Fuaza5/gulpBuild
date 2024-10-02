@@ -1,0 +1,12 @@
+/node_modules
+/build
+package-lock.json
+src/img/LB2 - Luffy vs Katakuri_00703.jpg
+src/img/AE_Splash.png
+src/js/main.js
+src/js/lib.js
+src/css/media.css
+src/css/main.scss
+src/css/main.css
+src/css/color.sass
+.vscode/settings.json
